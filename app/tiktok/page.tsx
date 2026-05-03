@@ -1,0 +1,16 @@
+import Link from "next/link"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { articles } from "@/lib/articles"
+
+export const metadata = { title: "From TikTok? Get Your Funding Deal Checked | DEM", description: "Submit your invoice, purchase order, trade, or working-capital requirement to DEM after watching our TikTok content.", alternates: { canonical: "https://demng.co.za/tiktok" } }
+
+export default function TikTokLandingPage() {
+  const featured = articles.slice(0, 6)
+  return (
+    <main className="min-h-screen bg-background">
+      <section className="py-20 md:py-28 bg-foreground text-background"><div className="container mx-auto px-6"><div className="max-w-3xl"><p className="text-sm tracking-widest text-accent uppercase mb-4">DEM TikTok</p><h1 className="text-4xl md:text-6xl font-semibold leading-tight mb-6">Saw us on TikTok? Let us check if your deal is fundable.</h1><p className="text-lg text-background/75 leading-relaxed mb-8">DEM helps SMEs understand invoice discounting, purchase order finance, trade finance, supplier funding, and structured working-capital options.</p><div className="flex flex-col sm:flex-row gap-4"><a href="https://wa.me/27794425113?text=DEM%20-%20I%20came%20from%20TikTok%20and%20want%20to%20check%20if%20my%20deal%20is%20fundable" className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md font-medium hover:bg-accent/90 transition-colors">WhatsApp DEM</a><a href="/#contact" className="inline-flex items-center justify-center gap-2 border border-background/30 px-6 py-3 rounded-md font-medium hover:bg-background/10 transition-colors">Submit Inquiry</a></div></div></div></section>
+      <section className="py-16"><div className="container mx-auto px-6"><div className="grid gap-6 md:grid-cols-3">{["Invoice or customer contract", "Purchase order or trade opportunity", "Amount needed and timeline"].map((item) => (<div key={item} className="rounded-lg border border-border p-6"><CheckCircle2 className="mb-4 h-6 w-6 text-accent" /><h2 className="font-semibold text-lg">{item}</h2><p className="mt-2 text-sm text-muted-foreground">Send this information so we can understand the funding route.</p></div>))}</div></div></section>
+      <section className="py-16 bg-muted/30"><div className="container mx-auto px-6"><div className="mb-10 flex items-end justify-between gap-6"><div><p className="text-sm tracking-widest text-accent uppercase mb-3">Start learning</p><h2 className="text-3xl font-semibold">Popular funding guides</h2></div><Link href="/resources" className="hidden md:inline-flex items-center gap-2 text-accent font-medium">View all <ArrowRight className="h-4 w-4" /></Link></div><div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{featured.map((article) => (<Link key={article.slug} href={`/resources/${article.slug}?utm_source=tiktok&utm_medium=social&utm_campaign=dem_tiktok_landing`} className="rounded-lg border border-border bg-background p-6 hover:border-accent/60 transition-colors"><p className="text-xs uppercase tracking-wider text-accent mb-3">{article.category}</p><h3 className="font-semibold text-lg mb-2">{article.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{article.description}</p></Link>))}</div></div></section>
+    </main>
+  )
+}
