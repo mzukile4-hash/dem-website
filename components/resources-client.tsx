@@ -49,7 +49,12 @@ export default function ResourcesClient({
               {categories.map((category) => (
                 <button
                   key={category}
-                  onClick={() => setActiveCategory(category)}
+                  onClick={() => {
+                    setActiveCategory(category)
+                    document.getElementById("article-grid")?.scrollIntoView({
+                      behavior: "smooth",
+                    })
+}}
                   className={`rounded-full border px-4 py-2 text-sm transition-colors ${
                     activeCategory === category
                       ? "border-accent bg-accent text-background"
@@ -103,7 +108,7 @@ export default function ResourcesClient({
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section id="article-grid" className="py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.map((article, index) => {
