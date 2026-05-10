@@ -36,9 +36,13 @@ export function ArticleLayout({ title, category, readTime, children }: ArticleLa
       {/* Content */}
       <div className="py-12 md:py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto prose prose-lg prose-neutral dark:prose-invert">
-            {children}
-          </div>
+          <main className="py-16 md:py-24">
+            <div className="max-w-3xl mx-auto px-6">
+              <article className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-p:leading-8 prose-p:mb-6">
+                {children}
+              </article>
+            </div>
+          </main>
         </div>
       </div>
 
