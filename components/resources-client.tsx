@@ -69,46 +69,7 @@ export default function ResourcesClient({
         </div>
       </section>
 
-      <section className="py-12 border-b border-border bg-background">
-        <div className="container mx-auto px-6">
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-lg border border-border p-6">
-              <h2 className="text-lg font-semibold mb-2">
-                Auto-loading articles
-              </h2>
-
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                Add articles once and they automatically appear across the
-                resources section.
-              </p>
-            </div>
-
-            <div className="rounded-lg border border-border p-6">
-              <h2 className="text-lg font-semibold mb-2">
-                SEO scaling
-              </h2>
-
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                Structured metadata and indexed content designed for search
-                visibility.
-              </p>
-            </div>
-
-            <div className="rounded-lg border border-border p-6">
-              <h2 className="text-lg font-semibold mb-2">
-                TikTok conversion
-              </h2>
-
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                Educational finance content structured to convert traffic into
-                inquiries.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="article-grid" className="py-16 md:py-24">
+       <section id="article-grid" className="py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.map((article, index) => {
